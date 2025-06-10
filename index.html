@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +10,10 @@
 </head>
 <body>
     <header>
-        <a href="" class="logo">
+        <a href="#" class="logo">
             Nalo<span>Leal</span>
         </a>
-
+        <i class="fa-solid fa-bars"></i>
         <nav class="navbar">
             <a href="#home">Home</a>
             <a href="#about">About Me</a>
@@ -22,15 +22,20 @@
         </nav>
 
         <a href="#contact"><button class="gradient-btn">Contact Me</button></a>
+        
+        <i class="fa-solid fa-gear"></i>
     </header>
 
     <section class="home" id="home">
         <div class="home-content">
-            <h1>Olá mundo!<br> Eu sou <span>&lt;Natan&gt;</span></h1><br>
+            <div class="heading-top">
+                <h1>Olá mundo!<br> Eu sou <span>&lt;Natan&gt;</span></h1><br>
+            </div>
 
             <h3>Sou um <span>Desenvolvedor Web</span></h3>
-
-            <p>Estou cursando Ciência da Computação no Centro Universitário Jorge Amado. Possuo conhecimentos sólidos em HTML e CSS, além de noções em JavaScript e Python. Atualmente, desenvolvo sites e busco consolidar diariamente minhas habilidades na área.</p>
+            <br>
+            <br>
+            <p>Estou cursando Ciência da Computação no Centro Universitário Jorge Amado. Possuo conhecimentos sólidos em Python, JavaScript, HTML5 e CSS3, além de noções em linguagens C. Atualmente, desenvolvo sites e busco consolidar diariamente minhas habilidades na área.</p>
 
             <div class="home-icons">
                 <a href="https://github.com/natanleal1?tab=overview&from=2025-03-01&to=2025-03-31" target="_blank"><i class="fa-brands fa-github"></i></a>
@@ -46,7 +51,8 @@
 
         <div class="home-img">
             <img src="img1.jpg" alt="Foto de Natan Leal">
-        </div>        
+        </div>      
+          
     </section>
 
         <hr>
@@ -58,9 +64,12 @@
         <div class="about-content">
             <h2>About <span>Me</span></h2><br>
 
-            <p>Olá, me chamo Natan da Anunciação Leal de Oliveira &lt;nalo&gt;. Tenho 18 anos e sou uma pessoa bastante curiosa que sempre gostou de criar coisas. Estou estudando ciência da computação na Unijorge com o intuito de agregar o máximo de conhecimento para me tornar um desenvolvedor full-stack para operar tanto no client-side(front-end) como no server-side(back-end)</p><br>
+            <p>Olá, me chamo Natan da Anunciação Leal de Oliveira &lt;nalo&gt;. Tenho 18 anos e sou uma pessoa bastante curiosa que sempre gostou de criar coisas. Estou estudando ciência da computação na Unijorge com o intuito de agregar o máximo de conhecimento para me tornar ou um Cientista de dados ou um desenvolvedor full-stack para operar tanto no client-side(front-end) como no server-side(back-end)</p><br>
 
-            <a href="#services" class="btn">Read More</a><br>
+            <div class="about-flex">
+                <a href="#services" class="btn">Read More</a><br>
+                <a href="#" class="btn">Download CV</a><br>
+            </div>
 
         </div>
     </section>
@@ -104,7 +113,7 @@
             <div class="project-card">
                 <img src="tc.png" alt="">
                 <h3>TechConnect</h3><br>
-                <p>Projeto feito na Unijorge o qual tive que fazer um site para uma empresa fictícia. Nesse site consegui por formulários e todos os requerimentos que o cliente pediu.</p>
+                <p>Projeto feito na Unijorge o qual tive que fazer um site para uma empresa ficícia. Nesse site consegui por formulários e todos os requerimentos que o cliente pediu.</p>
                 <a href="https://natanleal1.github.io/TechConnect/" target="_blank">
                     <div class="btn">Analyze my Project</div>
                 </a>
@@ -121,15 +130,14 @@
             </div>
             <div class="project-card">
                 <img src="pythontest.png" alt="">
-                <h3>Projeto Python</h3><br>
+                <h3>Projeto Think.Py</h3><br>
                 <p>Desenvolvi um jogo no terminal do Python para que o usuário advinhe o que a máquina "pensou".</p>
                 <br>
             </div>
         </div>
     </section>
 
-    <script></script>
-
+    
     <footer class="contact" id="contact">
         <br>
         <br>
@@ -139,13 +147,15 @@
         <p>Natan Leal</p>
         <div class="contact-icons">
             <a href="https://github.com/natanleal1?tab=overview&from=2025-03-01&to=2025-03-31" target="_blank"><i class="fa-brands fa-github"></i></a>
-
+            
             <a href="https://www.linkedin.com/in/natan-leal-de-oliveira-378762355/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-
+            
             <a href="https://www.instagram.com/natanx_28/"target="_blank"><i class="fa-brands fa-square-instagram" ></i></a>
 
             <a href="mailto:naloliveira216@gmail.com"><i class="fa-solid fa-envelope" target="_blank"></i></a> 
         </div>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>

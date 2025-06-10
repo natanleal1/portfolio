@@ -7,9 +7,18 @@
     scroll-behavior: smooth;
     font-family: "Press Start 2P";
 }
+.body.white{
+
+}
 html{
     font-size: 60%;
     overflow-x: hidden;
+}
+.fa-bars{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 2rem;
+    opacity: 0;
 }
 :root{
     --bg-color: rgb(12, 12, 12);
@@ -33,7 +42,7 @@ header{
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    /*z-index para garantir que os elementos ficarão no topo*/
+    /*z-index para garantir que os elementos ficarão no atras*/
 } 
 .logo{
     font-size: 3rem;
@@ -72,10 +81,15 @@ span{
     cursor: pointer;
     transition: 0.3s ease-in-out;
     text-wrap: nowrap;
+    margin-left: 10px;
 }
 .gradient-btn:hover{
     color: var(--text-color);
     transform: scale(1.1);    
+}
+.fa-gear{
+    margin-left: 20px;
+    font-size: 2.5rem;
 }
 section{
     min-height: 100vh;
@@ -97,6 +111,7 @@ section{
     display: flex;
     flex-direction: column;
     text-align: center;
+    min-width: 500px;
 }
 .home-content h1{
     font-size: 3rem;
@@ -168,6 +183,11 @@ section{
 }
 .about-content .btn{
     margin: 3rem 0;
+}
+.about-flex{
+    display: flex;
+    gap: 20px;
+    text-align: center;
 }
 .btn{
     display: inline-block;
@@ -301,11 +321,7 @@ section{
     font-size: 2rem;
     line-height: 30px;
 }
-.contact:hove{
-    background-color: black;
-    
-    transform: scale(1.05);
-}
+
 .contact-icons a{
     display: inline-flex;
     flex-direction: row;
@@ -333,4 +349,84 @@ section{
 }
 ::-webkit-scrollbar-track{
     background: var(--second-bg);
+}
+
+@media(max-width: 1285px){
+    .fa-bars{
+        opacity: 100;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3rem;
+        background-color: var(--bg-color);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        display: none;
+    }
+    .logo{
+        font-size: 2rem;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0; 
+    }
+    .navbar.active{
+        display: block;
+    }
+    .gradient-btn{
+        display: inline-block;
+        font-size: 1rem;
+    }
+    .home{
+        flex-direction: column-reverse;
+        margin: 5rem 0;
+    }
+    .home-content{
+        align-items: center;
+        text-align: center;
+    }
+    .home-img img{
+        width: 400px;
+        height: 400px;
+        border-radius: 70px;
+        margin-bottom: 0px;
+        
+    }
+    .heading-top{
+        transform: translateY(-50px);
+    }
+    .about{
+        flex-direction: column-reverse;
+    }        
+    .about-img img{
+        display: none;
+    }
+    .heading-services{
+        font-size: 4rem;
+        padding: 10px;
+    }
+    .projects h2{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .project-card img{
+        width: 450px;
+        height: 300px;
+        border-radius: 15px 0 15px 0;
+    }
+    .btn{
+        max-width: 70%;
+    }
+    .contact h3, p{
+        font-size: 1.5rem;
+    }
+    .contact h1{
+        font-size: 3rem;
+        padding: 5px;
+    }
 }
