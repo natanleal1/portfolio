@@ -70,13 +70,12 @@ body.light{
     .services{
         background-color: var(--lg-trd-bg);
     }
+    
     .service-info p{
         color: var(--lg-text-color);
     }
-    .service-box:hover{
-        background: var(--lg-text-color);
-        color: var(--mention2-color);
-    }
+    
+    
     .project{
         background-color: var(--lg-trd-color);
     }
