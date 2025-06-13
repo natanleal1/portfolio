@@ -5,11 +5,9 @@
     box-sizing: border-box;
     text-decoration: none;
     scroll-behavior: smooth;
-    font-family: "Press Start 2P";
+    font-family: "Press Start 2P", Arial;
 }
-.body.white{
 
-}
 html{
     font-size: 60%;
     overflow-x: hidden;
@@ -22,14 +20,67 @@ html{
 }
 :root{
     --bg-color: rgb(12, 12, 12);
+    --lg-bg-color: rgb(177, 172, 172);
+    --lg-snd-bg: rgb(126, 118, 118);
+    --lg-text-color: rgb(0, 0, 0);
+    --lg-spc-text: rgb(61, 14, 61);
     --second-bg: rgba(40, 40, 40, 0.302);
     --text-color: white;
     --main-color: blue;
+    --mention-color: rgb(27, 164, 168);
+    --mention2-color: rgb(65, 175, 219);
+}
+u{
+    color: var(--mention-color);
+}
+n{
+    color: var(--mention2-color);
 }
 body{
-    background: var(--bg-color);
-    color: var(--text-color);
+   background: var(--bg-color);
+    color: var(--text-color); 
 }
+body.light{
+    background: var(--lg-bg-color);
+    color: var(--lg-text-color);
+    u, n{
+        color: var(--lg-spc-text);
+    }
+    @media (max-width: 1285px){        
+        .navbar{
+            background-color: var(--lg-bg-color);
+        }
+    }
+    header a{
+        color: var(--lg-text-color);
+    }
+    .heading-services{
+        color: var(--lg-text-color);
+    }
+    .home-icons a{
+        color: var(--lg-text-color);
+    }
+    .home-icons a:hover{
+        color: var(--main-color);
+    }
+    .services{
+        background-color: var(--lg-snd-bg);
+    }
+    .service-box:hover{
+        background: var(--lg-text-color);
+        color: var(--mention2-color);
+    }
+    .project-card{
+        background-color: rgb(56, 49, 49);
+    }
+    .projects p{
+        color: var(--text-color);
+    }
+    footer{
+        color: var(--text-color);
+    }
+}
+
 header{
     position: fixed;
     width: 100%;
@@ -42,7 +93,7 @@ header{
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    /*z-index para garantir que os elementos ficarão no atras*/
+    /*z-index para garantir que os elementos ficarão para tras*/
 } 
 .logo{
     font-size: 3rem;
@@ -85,7 +136,8 @@ span{
 }
 .gradient-btn:hover{
     color: var(--text-color);
-    transform: scale(1.1);    
+    transform: scale(1.1); 
+       
 }
 .fa-gear{
     margin-left: 20px;
@@ -111,7 +163,8 @@ section{
     display: flex;
     flex-direction: column;
     text-align: center;
-    min-width: 500px;
+    min-width: 400px;
+    max-width: auto;
 }
 .home-content h1{
     font-size: 3rem;
@@ -188,6 +241,7 @@ section{
     display: flex;
     gap: 20px;
     text-align: center;
+    font-size: 1.5rem;
 }
 .btn{
     display: inline-block;
@@ -292,6 +346,7 @@ section{
     color: transparent;
 }
 .project-card p{
+    padding: 15px;
     margin-bottom: 20px;
     font-size: 1.8rem;
     letter-spacing: 2;
@@ -341,6 +396,10 @@ section{
     transform: scale(1.1) translateY(-5px);
     box-shadow: 0 0 40PX var(--main-color);
 }
+footer{
+    margin-bottom: 0;
+    min-height: 300px;
+}
 ::-webkit-scrollbar{
     width: 15px;
 }
@@ -353,7 +412,7 @@ section{
 
 @media(max-width: 1285px){
     .fa-bars{
-        opacity: 100;
+        opacity: 100;        
     }
     .navbar{
         position: absolute;
@@ -366,6 +425,7 @@ section{
         border-left: 2px solid var(--main-color);
         border-bottom: 2px solid var(--main-color);
         display: none;
+        
     }
     .logo{
         font-size: 2rem;
@@ -396,10 +456,7 @@ section{
         border-radius: 70px;
         margin-bottom: 0px;
         
-    }
-    .heading-top{
-        transform: translateY(-50px);
-    }
+    }   
     .about{
         flex-direction: column-reverse;
     }        
@@ -409,14 +466,19 @@ section{
     .heading-services{
         font-size: 4rem;
         padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .service-info p{
+        font-size: 1.2rem;
     }
     .projects h2{
         font-size: 2.5rem;
         text-align: center;
     }
     .project-card img{
-        width: 450px;
-        height: 300px;
+        width: 750px;
+        height: 400px;
         border-radius: 15px 0 15px 0;
     }
     .btn{
@@ -429,4 +491,112 @@ section{
         font-size: 3rem;
         padding: 5px;
     }
+    .e-options{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+@media (max-width: 768px) {
+    .home-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-icons i{
+        font-size: 2.5rem;
+    
+    }
+    .project-card img{
+            width: 450px;
+            height: 300px;
+            border-radius: 15px 0 15px 0;
+    }
+    .home-content h1{
+        font-size: 3rem;
+    }
+    .home-content h3{
+        font-size: 2rem;
+    }
+    .home-content p{
+        font-size: 1.5rem;
+    }
+    .heading-services{
+        transform: translateX();
+    }
+    .contact-icons i{
+        font-size: 2.5rem;
+    }
+    .project-card p{
+        font-size: 1rem;
+    }
+    .elements h2{
+        font-size: 1rem;
+    }
+    .e-options a{
+        font-size: .5rem;
+    }
+    .flotting-e{
+        opacity: 0;
+
+        & a{
+            display: none;
+        }
+    }
+    ::-webkit-scrollbar-thumb, ::-webkit-scrollbar, ::-webkit-scrollbar-track{
+        display: none;
+    }
+}
+/*Página de boas vindas*/
+.paibemvindos{
+    padding: 30px;
+}
+.title{
+    
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    row-gap: 20px;
+}
+.elements{
+    
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 50px;
+    & h2{
+        font-size: 1.5rem;
+    }
+
+    & .e-options a{
+        color: var(--lg-text-color);
+        font-size: 2rem;
+        background-color: var(--mention2-color);
+        padding: 10px;
+        border-radius: 20px;
+        border: 5px solid black;
+        transition: all .5s ease-in-out;
+    }
+    & .e-options a:hover{
+        background-color: var(--main-color);
+    }
+}
+.flotting-e{
+    position: fixed;
+    left: 40px;
+    bottom: 100px;
+
+    background-color: var(--second-bg);
+    padding: 10px;
+    font-weight: 400;
+    font-size: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
 }
