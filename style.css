@@ -70,13 +70,16 @@ body.light{
         background: var(--lg-text-color);
         color: var(--mention2-color);
     }
+    .project{
+        background-color: var(--lg-bg-color);
+    }
     .project-card{
         background-color: rgb(56, 49, 49);
     }
-    .projects p{
+    .project-card p{
         color: var(--text-color);
     }
-    footer{
+    footer h3, p{
         color: var(--text-color);
     }
 }
@@ -160,6 +163,7 @@ section{
     letter-spacing: 2px;
 }
 .home-content{
+    padding: 40px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -320,6 +324,7 @@ section{
 } 
 .projects{
     background: var(--second-bg);
+    padding: 40px;
 }
 .projects-box{
     display: grid;
