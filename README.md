@@ -10,4 +10,4 @@ O desenvolvimento deste portfólio permitiu a aplicação prática de diversas c
 
 * **HTML5:** Estruturação semântica do conteúdo, garantindo acessibilidade e organização.
 * **CSS3:** Estilização e design responsivo, criando uma interface agradável e adaptável a diferentes dispositivos.
-* **JavaScript:** Implementação de funcionalidades interativas, como galerias de projetos, animações ou outros elementos dinâmicos para aprimorar a experiência do usuário.
+* **JavaScript:** Implementação de funcionalidades interativas, como por exemplo a mudança da tonalidade do cenário dentro da aplicação para aprimorar a experiência do usuário.
