@@ -55,7 +55,7 @@ body.light{
     header a{
         color: var(--lg-text-color);
     }
-    .heading-services{
+    .heading-services, .home-content p, .about-content p{
         color: var(--lg-text-color);
     }
     .home-icons a{
@@ -285,6 +285,7 @@ section{
     /*automáticamente encaixa as colunas side by side*/
     align-items: center;
     gap: 1.5rem;
+    margin: 10px; 
 }
 .service-box{
     display: flex;
