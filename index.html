@@ -1,55 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NaloNet</title>
+    <title>NaloNet - Natan Leal</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="./public/favicon.png" type="j/x-png">
-    
+    <link rel="shortcut icon" href="./public/favicon.png" type="image/png">
 </head>
 <body>
+    <!-- Background Particle Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
     <header>        
         <a href="#" class="logo">
-            Nalo<span>Link</span>
+            Nalo<span>NeT</span>
         </a>
 
-        <i class="fa-solid fa-bars"></i>
-        <!--<nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-        </nav>
-        
-        <a href="#contact"><button class="gradient-btn">Contact Me</button></a>
-        -->
-        
-        <i class="fa-solid fa-gear"></i>
+        <div class="header-actions">
+            <i class="fa-solid fa-gear" title="Alternar Tema / Toggle Theme"></i>
+        </div>
     </header>
-    <div class="paibemvindos">
-        <div class="title">
-            <h1><n>print("</n>Hello world! I'm Natan Leal<n>")</n></h1>
-        </div>
-        <div class="elements">
-            <h2>Selecione uma língua | Select a Language</h2>
-            <div class="e-options">
-                <a href="./src/portuguese.html">Portuguese (Português)</a>
-                <a href="./src/english.html">English (Inglês)</a>
-            </div>
-        </div>
 
-        <div class="flotting-e">?</div>
+    <br><br>
 
-        <!--Formulário-->
-        <div class="contact-me">
+    <main style="min-height: 85vh; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; padding: 2rem;">
+        <div style="background: var(--card-bg); backdrop-filter: blur(20px); border: 1px solid var(--card-border); border-radius: 24px; padding: 3rem 2.5rem; max-width: 650px; width: 100%; text-align: center; box-shadow: var(--aero-shadow);">
             
+            <!-- <div class="terminal-badge" style="margin: 0 auto 1.5rem;">
+                <span class="pulse-dot"></span>
+                <span>system.init()</span>
+            </div> -->
+
+
+            <h1 style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.75rem;">
+                <span class="typewriter-text" data-text='print("Hello World!")'>print("Hello World!")</span>
+            </h1>
+
+            <p style="color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 2.5rem;">
+                Selecione seu idioma para explorar o portfólio | Select your language to explore the portfolio
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;">
+                <a href="./pt/portuguese.html" class="lang-card" style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--card-border); border-radius: 16px; color: var(--text-primary); transition: all 0.3s ease;">
+                    <i class="fa-solid fa-globe" style="font-size: 2rem; color: var(--accent-cyan);"></i>
+                    <span style="font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; -webkit-text-fill-color: initial; background: none; color: var(--text-primary);">Português</span>
+                    <span style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">Acessar no Brasil (PT-BR)</span>
+                </a>
+
+                <a href="./en/english.html" class="lang-card" style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--card-border); border-radius: 16px; color: var(--text-primary); transition: all 0.3s ease;">
+                    <i class="fa-solid fa-language" style="font-size: 2rem; color: var(--accent-cyan);"></i>
+                    <span style="font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; -webkit-text-fill-color: initial; background: none; color: var(--text-primary);">English</span>
+                    <span style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">International Version (EN)</span>
+                </a>
+            </div>
+
+    
         </div>
-
-        <div class="f-options"></div>
-    </div>
-
+    </main>
 
     <script src="./script.js"></script>
 </body>

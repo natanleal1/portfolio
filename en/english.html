@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaloNet (EN)</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="../public/favicon.png" type="image/png">
+</head>
+<body>
+    <!-- Interactive Background Particles Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header & Navigation -->
+    <header>
+        <a href="#home" class="logo">
+            Nalo<span>NeT</span>
+        </a>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#technologies">Technologies</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="../pt/portuguese.html" class="lang-btn" title="Alternar para Português">
+                <i class="fa-solid fa-globe"></i> PT
+            </a>
+            <i class="fa-solid fa-gear" title="Toggle Theme"></i>
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+        </div>
+    </header>
+
+    <!-- 1. Hero / Home Section -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <div class="terminal-badge">
+                <span class="pulse-dot"></span>
+                <span>system.online // dev.profile</span>
+            </div>
+
+            <h1>Hello World!<br> I am <span>&lt;Natan Leal&gt;</span></h1>
+            <h3>Software Developer <u>Full-Stack</u></h3>
+            
+            <p>
+                B.S. student in <n>Computer Science</n> at Jorge Amado University Center (Unijorge). 
+                I possess solid technical expertise in <u>Java</u>, <u>Python</u>, <u>Docker</u>, <u>JavaScript</u>, and <u>SQL</u>, 
+                alongside applied research in <u>Artificial Intelligence</u> and Software Architecture.
+            </p>
+
+            <div class="home-icons">
+                <a href="https://github.com/natanleal1" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/natan-leal-de-oliveira-378762355/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/nalo_dev" target="_blank" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="mailto:naloliveira216@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="home-img">
+            <img src="../assets/img1.jpg" alt="Natan Leal Photo">
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- 2. About Section -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="../assets/natanGemini.png" alt="Natan Leal working environment">
+        </div>
+
+        <div class="about-content">
+            <h2 class="section-title"><i class="fa-solid fa-user-gear" style="color: var(--accent-cyan);"></i> About <span>Me</span></h2>
+            
+            <p>
+                My name is <n>Natan A. Leal de Oliveira &lt;nalo&gt;</n>. I am an analytical, organized, and leadership-driven software developer. 
+                Pursuing Computer Science to combine a rigorous theoretical foundation with modern software engineering. 
+                My focus centers on <n>Software Architecture</n>, <n>User Experience (UX/UI)</n>, and high-performance Cloud & local systems.
+            </p>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="#projects" class="btn"><i class="fa-solid fa-code-branch"></i> View Projects</a>
+                <a href="#contact" class="btn" style="background: rgba(255,255,255,0.05); border: 1px solid var(--card-border); color: var(--text-primary);"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- 3. Windows XP / 7 Aero Glass Tech Stack Explorer -->
+    <section class="tech-section" id="technologies">
+        <div class="section-header-center">
+            <div class="terminal-badge" style="margin: 0 auto 1rem;">
+                <i class="fa-brands fa-windows"></i>
+                <span>NaloOS v7.1 // Desktop Explorer</span>
+            </div>
+            <h2 class="section-title" style="justify-content: center;">Tech <span>Stack & Skills</span></h2>
+            <p>Explore my core technical stack via this Windows Aero Glass interactive desktop environment. Click desktop icons to open tech windows.</p>
+        </div>
+
+        <div class="aero-workspace">
+            <div class="aero-desktop">
+                <div class="aero-desktop-grid">
+                    <!-- Java Icon -->
+                    <div class="aero-desktop-icon selected" data-tech="java">
+                        <div class="aero-icon-img icon-java">
+                            <i class="fa-brands fa-java"></i>
+                        </div>
+                        <div class="aero-icon-label">Java.exe</div>
+                    </div>
+
+                    <!-- Python Icon -->
+                    <div class="aero-desktop-icon" data-tech="python">
+                        <div class="aero-icon-img icon-python">
+                            <i class="fa-brands fa-python"></i>
+                        </div>
+                        <div class="aero-icon-label">Python.py</div>
+                    </div>
+
+                    <!-- Docker Icon -->
+                    <div class="aero-desktop-icon" data-tech="docker">
+                        <div class="aero-icon-img icon-docker">
+                            <i class="fa-brands fa-docker"></i>
+                        </div>
+                        <div class="aero-icon-label">Docker.sys</div>
+                    </div>
+
+                    <!-- JavaScript Icon -->
+                    <div class="aero-desktop-icon" data-tech="javascript">
+                        <div class="aero-icon-img icon-js">
+                            <i class="fa-brands fa-js"></i>
+                        </div>
+                        <div class="aero-icon-label">JavaScript.js</div>
+                    </div>
+
+                    <!-- SQL Icon -->
+                    <div class="aero-desktop-icon" data-tech="sql">
+                        <div class="aero-icon-img icon-sql">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <div class="aero-icon-label">SQL_DB.sql</div>
+                    </div>
+
+                    <!-- TypeScript Icon -->
+                    <div class="aero-desktop-icon" data-tech="typescript">
+                        <div class="aero-icon-img icon-ts">
+                            <i class="fa-brands fa-code"></i>
+                        </div>
+                        <div class="aero-icon-label">TypeScript.ts</div>
+                    </div>
+
+                    <!-- Git Icon -->
+                    <div class="aero-desktop-icon" data-tech="git">
+                        <div class="aero-icon-img icon-git">
+                            <i class="fa-brands fa-git-alt"></i>
+                        </div>
+                        <div class="aero-icon-label">Git_Repo.git</div>
+                    </div>
+
+                    <!-- AI Icon -->
+                    <div class="aero-desktop-icon" data-tech="ai">
+                        <div class="aero-icon-img icon-ai">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div class="aero-icon-label">AI_Models.bin</div>
+                    </div>
+                </div>
+
+                <!-- Window 1: Java -->
+                <div class="aero-window active" id="window-java" data-icon="fa-brands fa-java">
+                    <div class="win-titlebar">
+                        <div class="win-title-left">
+                            <i class="fa-brands fa-java icon-java"></i>
+                            <span class="win-title-text">Java - OOP & Enterprise Backend</span>
+                        </div>
+                        <div class="win-controls">
+                            <button class="win-control minimize" title="Minimize">_</button>
+                            <button class="win-control maximize" title="Maximize">□</button>
+                            <button class="win-control close" title="Close">✕</button>
+                        </div>
+                    </div>
+                    <div class="win-body">
+                        <div class="win-tech-header">
+                            <i class="fa-brands fa-java win-tech-icon icon-java"></i>
+                            <div class="win-tech-meta">
+                                <h4>Java Core & Enterprise</h4>
+                                <span class="win-tech-badge">Advanced // Backend & REST APIs</span>
+                            </div>
+                        </div>
+                        <p class="win-tech-desc">
+                            Building robust server-side applications centered on Object-Oriented Programming (OOP), clean architectural patterns, RESTful API integrations, and currency conversion logic.
+                        </p>
+                        <div class="win-code-box">
+                            <div class="win-code-header">
+                                <span>CurrencyConverterService.java</span>
+                                <span>Java 17</span>
+                            </div>
+                            <div class="win-code-content"><span class="code-keyword">public class</span> CurrencyService {
+    <span class="code-keyword">public</span> Double convertCurrency(String from, String to, Double amount) {
+        HttpResponse&lt;String&gt; response = HttpClient.newHttpClient()
+            .send(request, HttpResponse.BodyHandlers.ofString());
+        <span class="code-keyword">return</span> parseExchangeRate(response.body()) * amount;
+    }
+}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Window 2: Python -->
+                <div class="aero-window closed" id="window-python" data-icon="fa-brands fa-python">
+                    <div class="win-titlebar">
+                        <div class="win-title-left">
+                            <i class="fa-brands fa-python icon-python"></i>
+                            <span class="win-title-text">Python - Networking, Crypto & AI</span>
+                        </div>
+                        <div class="win-controls">
+                            <button class="win-control minimize">_</button>
+                            <button class="win-control maximize">□</button>
+                            <button class="win-control close">✕</button>
+                        </div>
+                    </div>
+                    <div class="win-body">
+                        <div class="win-tech-header">
+                            <i class="fa-brands fa-python win-tech-icon icon-python"></i>
+                            <div class="win-tech-meta">
+                                <h4>Python 3</h4>
+                                <span class="win-tech-badge">Advanced // Sockets, Data & AI</span>
+                            </div>
+                        </div>
+                        <p class="win-tech-desc">
+                            Developing secure server-client TCP/UDP communication protocols, encrypted socket channels, data analysis scripts, and AI integration.
+                        </p>
+                        <div class="win-code-box">
+                            <div class="win-code-header">
+                                <span>secure_server.py</span>
+                                <span>Python 3.11</span>
+                            </div>
+                            <div class="win-code-content"><span class="code-keyword">import</span> socket, ssl
+
+<span class="code-keyword">def</span> <span class="code-fn">start_secure_server</span>(host, port):
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+    <span class="code-comment"># Encrypted server-client channel</span>
+    server.bind((host, port))
+    server.listen(<span class="code-str">5</span>)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Window 3: Docker -->
+                <div class="aero-window closed" id="window-docker" data-icon="fa-brands fa-docker">
+                    <div class="win-titlebar">
+                        <div class="win-title-left">
+                            <i class="fa-brands fa-docker icon-docker"></i>
+                            <span class="win-title-text">Docker - Containerization & DevOps</span>
+                        </div>
+                        <div class="win-controls">
+                            <button class="win-control minimize">_</button>
+                            <button class="win-control maximize">□</button>
+                            <button class="win-control close">✕</button>
+                        </div>
+                    </div>
+                    <div class="win-body">
+                        <div class="win-tech-header">
+                            <i class="fa-brands fa-docker win-tech-icon icon-docker"></i>
+                            <div class="win-tech-meta">
+                                <h4>Docker & Containers</h4>
+                                <span class="win-tech-badge">Intermediate // Deployment</span>
+                            </div>
+                        </div>
+                        <p class="win-tech-desc">
+                            Containerizing microservices and web applications, writing optimized Dockerfiles, and managing multi-container setups with Docker Compose.
+                        </p>
+                        <div class="win-code-box">
+                            <div class="win-code-header">
+                                <span>Dockerfile</span>
+                                <span>Docker Engine</span>
+                            </div>
+                            <div class="win-code-content"><span class="code-keyword">FROM</span> openjdk:17-jdk-slim
+<span class="code-keyword">WORKDIR</span> /app
+<span class="code-keyword">COPY</span> target/app.jar app.jar
+<span class="code-keyword">EXPOSE</span> 8080
+<span class="code-keyword">ENTRYPOINT</span> ["java", "-jar", "app.jar"]</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Window 4: JavaScript -->
+                <div class="aero-window closed" id="window-javascript" data-icon="fa-brands fa-js">
+                    <div class="win-titlebar">
+                        <div class="win-title-left">
+                            <i class="fa-brands fa-js icon-js"></i>
+                            <span class="win-title-text">JavaScript - Web & Interactivity</span>
+                        </div>
+                        <div class="win-controls">
+                            <button class="win-control minimize">_</button>
+                            <button class="win-control maximize">□</button>
+                            <button class="win-control close">✕</button>
+                        </div>
+                    </div>
+                    <div class="win-body">
+                        <div class="win-tech-header">
+                            <i class="fa-brands fa-js win-tech-icon icon-js"></i>
+                            <div class="win-tech-meta">
+                                <h4>Modern JavaScript (ES6+)</h4>
+                                <span class="win-tech-badge">Proficient // Front-End & Node.js</span>
+                            </div>
+                        </div>
+                        <p class="win-tech-desc">
+                            Crafting dynamic web user interfaces, DOM manipulation, async API fetching, interactive Canvas animations, and Node.js backend integration.
+                        </p>
+                        <div class="win-code-box">
+                            <div class="win-code-header">
+                                <span>app.js</span>
+                                <span>ES2023</span>
+                            </div>
+                            <div class="win-code-content"><span class="code-keyword">async function</span> <span class="code-fn">fetchPortfolioData</span>() {
+    <span class="code-keyword">const</span> res = <span class="code-keyword">await</span> fetch(<span class="code-str">'/api/projects'</span>);
+    <span class="code-keyword">const</span> data = <span class="code-keyword">await</span> res.json();
+    renderDynamicGrid(data);
+}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Window 5: SQL -->
+                <div class="aero-window closed" id="window-sql" data-icon="fa-solid fa-database">
+                    <div class="win-titlebar">
+                        <div class="win-title-left">
+                            <i class="fa-solid fa-database icon-sql"></i>
+                            <span class="win-title-text">SQL - Relational Databases</span>
+                        </div>
+                        <div class="win-controls">
+                            <button class="win-control minimize">_</button>
+                            <button class="win-control maximize">□</button>
+                            <button class="win-control close">✕</button>
+                        </div>
+                    </div>
+                    <div class="win-body">
+                        <div class="win-tech-header">
+                            <i class="fa-solid fa-database win-tech-icon icon-sql"></i>
+                            <div class="win-tech-meta">
+                                <h4>SQL & Relational DBs</h4>
+                                <span class="win-tech-badge">Solid // PostgreSQL & MySQL</span>
+                            </div>
+                        </div>
+                        <p class="win-tech-desc">
+                            Relational database schema modeling, writing optimized queries with JOINs and aggregations, indexing, views, and backend persistence.
+                        </p>
+                        <div class="win-code-box">
+                            <div class="win-code-header">
+                                <span>schema.sql</span>
+                                <span>PostgreSQL / MySQL</span>
+                            </div>
+                            <div class="win-code-content"><span class="code-keyword">SELECT</span> p.title, c.category_name, <span class="code-fn">COUNT</span>(u.id) <span class="code-keyword">AS</span> total_users
+<span class="code-keyword">FROM</span> projects p
+<span class="code-keyword">JOIN</span> categories c <span class="code-keyword">ON</span> p.category_id = c.id
+<span class="code-keyword">GROUP BY</span> p.id
+<span class="code-keyword">ORDER BY</span> total_users <span class="code-keyword">DESC</span>;</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Window 6: TypeScript -->
+                <div class="aero-window closed" id="window-typescript" data-icon="fa-brands fa-code">
+                    <div class="win-titlebar">
+                        <div class="win-title-left">
+                            <i class="fa-brands fa-code icon-ts"></i>
+                            <span class="win-title-text">TypeScript - Type Safety</span>
+                        </div>
+                        <div class="win-controls">
+                            <button class="win-control minimize">_</button>
+                            <button class="win-control maximize">□</button>
+                            <button class="win-control close">✕</button>
+                        </div>
+                    </div>
+                    <div class="win-body">
+                        <div class="win-tech-header">
+                            <i class="fa-brands fa-code win-tech-icon icon-ts"></i>
+                            <div class="win-tech-meta">
+                                <h4>TypeScript</h4>
+                                <span class="win-tech-badge">Solid // Full-Stack Typing</span>
+                            </div>
+                        </div>
+                        <p class="win-tech-desc">
+                            Strict static typing for robust bug prevention in complex projects, reusable interfaces, generics, and maintainable software architecture.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Window 7: Git -->
+                <div class="aero-window closed" id="window-git" data-icon="fa-brands fa-git-alt">
+                    <div class="win-titlebar">
+                        <div class="win-title-left">
+                            <i class="fa-brands fa-git-alt icon-git"></i>
+                            <span class="win-title-text">Git - Version Control</span>
+                        </div>
+                        <div class="win-controls">
+                            <button class="win-control minimize">_</button>
+                            <button class="win-control maximize">□</button>
+                            <button class="win-control close">✕</button>
+                        </div>
+                    </div>
+                    <div class="win-body">
+                        <div class="win-tech-header">
+                            <i class="fa-brands fa-git-alt win-tech-icon icon-git"></i>
+                            <div class="win-tech-meta">
+                                <h4>Git & GitHub</h4>
+                                <span class="win-tech-badge">Workflows // Branching & CI</span>
+                            </div>
+                        </div>
+                        <p class="win-tech-desc">
+                            Source code management using Git, branching strategies (Git Flow), pull request reviews, and collaborative team development.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Window 8: AI -->
+                <div class="aero-window closed" id="window-ai" data-icon="fa-solid fa-brain">
+                    <div class="win-titlebar">
+                        <div class="win-title-left">
+                            <i class="fa-solid fa-brain icon-ai"></i>
+                            <span class="win-title-text">AI & ML - Intelligent Systems</span>
+                        </div>
+                        <div class="win-controls">
+                            <button class="win-control minimize">_</button>
+                            <button class="win-control maximize">□</button>
+                            <button class="win-control close">✕</button>
+                        </div>
+                    </div>
+                    <div class="win-body">
+                        <div class="win-tech-header">
+                            <i class="fa-solid fa-brain win-tech-icon icon-ai"></i>
+                            <div class="win-tech-meta">
+                                <h4>Applied Artificial Intelligence</h4>
+                                <span class="win-tech-badge">Research & Practice</span>
+                            </div>
+                        </div>
+                        <p class="win-tech-desc">
+                            Research and practical deployment of LLMs (Gemini, GPT), computer vision, and autonomous agent workflows in real-world scenarios.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aero Start Menu -->
+            <div class="aero-start-menu">
+                <div class="start-menu-user">
+                    <img src="../assets/img1.jpg" class="start-menu-avatar" alt="Avatar Natan">
+                    <div>
+                        <div style="font-weight: 700; color: var(--text-primary);">Natan Leal</div>
+                        <div style="font-size: 0.75rem; color: var(--accent-cyan);">Software Engineer</div>
+                    </div>
+                </div>
+                <div class="start-menu-links">
+                    <a href="#home" class="start-menu-item"><i class="fa-solid fa-house"></i> Home</a>
+                    <a href="#about" class="start-menu-item"><i class="fa-solid fa-user"></i> About Me</a>
+                    <a href="#projects" class="start-menu-item"><i class="fa-solid fa-folder-open"></i> My Projects</a>
+                    <a href="https://github.com/natanleal1" target="_blank" class="start-menu-item"><i class="fa-brands fa-github"></i> GitHub Profile</a>
+                </div>
+            </div>
+
+            <!-- Taskbar -->
+            <div class="aero-taskbar">
+                <button class="aero-start-btn">
+                    <i class="fa-brands fa-windows"></i> Start
+                </button>
+                <div class="taskbar-tabs">
+                    <!-- Dynamic taskbar tabs generated by JS -->
+                </div>
+                <div class="taskbar-tray">
+                    <i class="fa-solid fa-wifi" style="color: var(--accent-cyan);"></i>
+                    <i class="fa-solid fa-volume-high"></i>
+                    <span id="taskbar-clock">12:00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- 4. Services Section -->
+    <section class="services" id="services">
+        <div class="section-header-center">
+            <h2 class="section-title" style="justify-content: center;">&lt;Serv<span>i</span>ces&gt;</h2>
+            <p>High-performance engineering solutions tailored to performance, clean architecture, and modern UX.</p>
+        </div>
+
+        <div class="service-container">
+            <div class="service-box">
+                <div class="service-info">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h4>System Development</h4>
+                    <p>Building responsive, scalable web and cloud applications with a strong emphasis on user experience (UX/UI).</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <i class="fa-solid fa-code-compare"></i>
+                    <h4>Code Analysis & Refactoring</h4>
+                    <p>Comprehensive evaluation of client-side (front-end) and server-side (back-end) codebases for speed, security, and cleanliness.</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <i class="fa-solid fa-language"></i>
+                    <h4>English Translation & Consulting</h4>
+                    <p>CCAA certified graduate with Teacher's Course extension. Experienced in technical writing and international communication.</p>
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-info">
+                    <i class="fa-solid fa-database"></i>
+                    <h4>Data Engineering & SQL</h4>
+                    <p>Relational database architecture, data modeling, query optimization, and backend storage integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- 5. Projects Section -->
+    <section class="projects" id="projects">
+        <div class="section-header-center">
+            <h2 class="section-title" style="justify-content: center;">Featured <span>Projects</span></h2>
+            <p>A selection of practical applications and research projects engineered with my tech stack.</p>
+        </div>
+
+        <div class="project-box">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="../assets/tc.png" alt="TechConnect Project">
+                <h3>TechConnect</h3>
+                <p>Enterprise web portal built for a fictitious company at Unijorge, featuring dynamic form validation and responsive design.</p>
+                <div class="project-tags">
+                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">HTML5/CSS3</span>
+                    <span class="project-tag">UX/UI</span>
+                </div>
+                <a href="https://natanleal1.github.io/TechConnect/" target="_blank" class="btn" style="width: 100%; justify-content: center;">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Analyze Project
+                </a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="../assets/pythonServerTest.png" alt="Server Client Crypto Project">
+                <h3>Server-Client (Crypto) Project</h3>
+                <p>Python networking application exploring TCP/UDP socket communication protocols and client-server message encryption.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Sockets</span>
+                    <span class="project-tag">Cryptography</span>
+                </div>
+                <a href="https://github.com/natanleal1/serverClientCripto" target="_blank" class="btn" style="width: 100%; justify-content: center;">
+                    <i class="fa-brands fa-github"></i> View GitHub Code
+                </a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="../assets/conversorMoedas.png" alt="Java Currency Converter">
+                <h3>Java Currency Converter</h3>
+                <p>Java system consuming live exchange rate APIs in real-time with robust exception handling and clean OOP structure.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Java</span>
+                    <span class="project-tag">REST API</span>
+                    <span class="project-tag">OOP</span>
+                </div>
+                <a href="https://github.com/natanleal1/conversorMoedas" target="_blank" class="btn" style="width: 100%; justify-content: center;">
+                    <i class="fa-brands fa-github"></i> View GitHub Code
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="contact" id="contact">
+        <h1>Nalo <span>NeT</span></h1>
+        <h3>New Adventures Lead to Opportunities</h3>
+        <p>Engineered by Natan Leal de Oliveira • Computer Science Student</p>
+        
+        <div class="contact-icons">
+            <a href="https://github.com/natanleal1" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/natan-leal-de-oliveira-378762355/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/nalo_dev" target="_blank" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="mailto:naloliveira216@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
