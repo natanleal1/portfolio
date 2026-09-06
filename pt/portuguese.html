@@ -197,14 +197,14 @@
                         </p>
                         <div class="win-code-box">
                             <div class="win-code-header">
-                                <span>CurrencyConverterService.java</span>
+                                <span>FinancialAnalysisService.java</span>
                                 <span>Java 17</span>
                             </div>
                             <div class="win-code-content"><span class="code-keyword">public class</span> CurrencyService {
-    <span class="code-keyword">public</span> Double convertCurrency(String from, String to, Double amount) {
+    <span class="code-keyword">public</span> Analysis analyzeTransactions(List&lt;Transaction&gt; transactions) {
         HttpResponse&lt;String&gt; response = HttpClient.newHttpClient()
             .send(request, HttpResponse.BodyHandlers.ofString());
-        <span class="code-keyword">return</span> parseExchangeRate(response.body()) * amount;
+        <span class="code-keyword">return</span> buildFinancialAnalysis(response.body());
     }
 }</div>
                         </div>
@@ -536,18 +536,18 @@
         </div>
 
         <div class="project-box">
-            <!-- Project 1 -->
+            <!-- Projeto 1 -->
             <div class="project-card">
-                <img src="../assets/tc.png" alt="TechConnect Project">
-                <h3>TechConnect</h3>
-                <p>Plataforma corporativa com formulários e interações dinâmicas desenvolvida para cliente fictício durante o curso na Unijorge.</p>
+                <img src="https://opengraph.githubassets.com/1/No-Country-simulation/G9-BR-Team-26" alt="Prévia do repositório do projeto FinanceAI">
+                <h3>FinanceAI</h3>
+                <p>Plataforma de finanças pessoais desenvolvida para o hackathon da Oracle em parceria com a No Country, reunindo gestão de transações, análise financeira, machine learning e a assistente de IA Fai.</p>
                 <div class="project-tags">
-                    <span class="project-tag">JavaScript</span>
-                    <span class="project-tag">HTML5/CSS3</span>
-                    <span class="project-tag">UX/UI</span>
+                    <span class="project-tag">React / TypeScript</span>
+                    <span class="project-tag">Java / Spring Boot</span>
+                    <span class="project-tag">IA & Data Science</span>
                 </div>
-                <a href="https://natanleal1.github.io/TechConnect/" target="_blank" class="btn" style="width: 100%; justify-content: center;">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Analisar Projeto
+                <a href="https://github.com/No-Country-simulation/G9-BR-Team-26" target="_blank" class="btn" style="width: 100%; justify-content: center;">
+                    <i class="fa-brands fa-github"></i> Ver Projeto no GitHub
                 </a>
             </div>
 
@@ -566,20 +566,6 @@
                 </a>
             </div>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="../assets/conversorMoedas.png" alt="Conversor de Moedas Java">
-                <h3>Conversor de Moedas em Java</h3>
-                <p>Sistema Java que consome API externa de taxas de câmbio em tempo real com tratamento de exceções e POO bem estruturada.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Java</span>
-                    <span class="project-tag">REST API</span>
-                    <span class="project-tag">POO</span>
-                </div>
-                <a href="https://github.com/natanleal1/conversorMoedas" target="_blank" class="btn" style="width: 100%; justify-content: center;">
-                    <i class="fa-brands fa-github"></i> Ver Código no GitHub
-                </a>
-            </div>
         </div>
     </section>
 
