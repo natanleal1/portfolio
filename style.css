@@ -1096,6 +1096,171 @@ footer p {
 }
 
 /* ==========================================================================
+   8.5 TERMINAL LANGUAGE-SELECT CARD (INDEX)
+   ========================================================================== */
+.terminal-window {
+    width: 100%;
+    max-width: 640px;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--aero-shadow);
+    font-family: var(--font-mono);
+}
+
+/* Neutralize the global gradient span rule inside the terminal card */
+.terminal-window span {
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+/* Terminal Titlebar */
+.terminal-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 1.25rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid var(--card-border);
+    user-select: none;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 0.45rem;
+    flex-shrink: 0;
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-dot.blue { background: #0072ff; }
+.terminal-dot.purple { background: #a855f7; }
+.terminal-dot.green { background: #34d399; }
+
+.terminal-title {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Terminal Code Area */
+.terminal-code {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.4rem 1.5rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.9;
+    overflow-x: auto;
+    background: #05080e;
+    border-bottom: 1px solid var(--card-border);
+}
+
+body.light .terminal-code {
+    background: #0b1120;
+}
+
+.terminal-gutter {
+    color: var(--text-muted);
+    text-align: right;
+    user-select: none;
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+.terminal-lines {
+    white-space: nowrap;
+}
+
+.term-prompt { color: var(--accent-cyan); }
+.term-text { color: var(--text-primary); }
+
+/* Blinking pipe cursor */
+.terminal-cursor {
+    display: inline-block;
+    margin-left: 3px;
+    color: var(--accent-cyan);
+    font-weight: 700;
+    animation: terminal-blink 1.1s step-end infinite;
+}
+
+@keyframes terminal-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Terminal Option Rows */
+.terminal-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding: 0.9rem 1.5rem 1.5rem;
+}
+
+.lang-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.lang-card:hover {
+    background: rgba(0, 240, 255, 0.08);
+    border-color: var(--card-hover-border);
+    color: var(--text-primary);
+    transform: translateX(5px);
+    box-shadow: 0 0 18px var(--accent-glow);
+}
+
+.lang-index {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    flex-shrink: 0;
+}
+
+.lang-icon {
+    color: var(--accent-cyan);
+    font-size: 1.15rem;
+    width: 1.4rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.lang-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+}
+
+.lang-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.lang-command {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+/* ==========================================================================
    9. RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 /* 1440px+ Ultra Wide */

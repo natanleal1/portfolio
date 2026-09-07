@@ -190,10 +190,59 @@ document.addEventListener('DOMContentLoaded', () => {
         el.innerText += fullText.charAt(idx);
         idx++;
         setTimeout(type, Math.random() * 50 + 40);
+      } else if (el.dataset.highlight === 'print') {
+        // Colorize typed code like a real editor: fn in blue, args in green
+        const m = fullText.match(/^([A-Za-z_]\w*)\((.*)\)$/);
+        if (m) {
+          const args = m[2].replace(/&/g, '&amp;').replace(/</g, '&lt;');
+          el.innerHTML = `<span class="code-fn">${m[1]}</span>(<span class="code-str">${args}</span>)`;
+        }
       }
     }
     type();
   });
+
+  // -------------------------------------------------------------------
+  // Typing Card Effect
+  // -------------------------------------------------------------------
+  const typingCard = document.querySelector('.typing-card');
+  if (typingCard) {
+    const typingArea = typingCard.querySelector('.typing-area');
+    const phrases = ['Python', 'JavaScript', 'TypeScript', 'React', 'Node.js'];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typeSpeed = 100;
+    const deleteSpeed = 50;
+    const pausePause = 1500;
+
+    function type() {
+      const currentPhrase = phrases[phraseIndex];
+
+      if (isDeleting) {
+        charIndex--;
+        typingArea.innerText = currentPhrase.substring(0, charIndex);
+      } else {
+        charIndex++;
+        typingArea.innerText = currentPhrase.substring(0, charIndex);
+      }
+
+      let typeSpeedVal = isDeleting ? deleteSpeed : typeSpeed;
+
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        typeSpeedVal = pausePause;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        typeSpeedVal = pausePause;
+      }
+
+      setTimeout(type, typeSpeedVal);
+    }
+
+    setTimeout(type, 1000);
+  }
 
   // -------------------------------------------------------------------
   // 4. Windows XP / 7 Aero Desktop Tech Explorer Interactive Engine
