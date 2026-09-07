@@ -1,55 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NaloNet</title>
+    <title>Naloliveira - Natan Leal</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="./public/favicon.png" type="j/x-png">
-    
+    <link rel="shortcut icon" href="./public/favicon.png" type="image/png">
 </head>
 <body>
+    <!-- Background Particle Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
     <header>        
         <a href="#" class="logo">
-            Nalo<span>Link</span>
+            Nalo<span>Oliv</span>
         </a>
 
-        <i class="fa-solid fa-bars"></i>
-        <!--<nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-        </nav>
-        
-        <a href="#contact"><button class="gradient-btn">Contact Me</button></a>
-        -->
-        
-        <i class="fa-solid fa-gear"></i>
+        <div class="header-actions">
+            <i class="fa-solid fa-gear" title="Alternar Tema / Toggle Theme"></i>
+        </div>
     </header>
-    <div class="paibemvindos">
-        <div class="title">
-            <h1><n>print("</n>Hello world! I'm Natan Leal<n>")</n></h1>
-        </div>
-        <div class="elements">
-            <h2>Selecione uma língua | Select a Language</h2>
-            <div class="e-options">
-                <a href="./src/portuguese.html">Portuguese (Português)</a>
-                <a href="./src/english.html">English (Inglês)</a>
+
+    <br><br>
+
+    <main style="min-height: 85vh; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; padding: 2rem;">
+        <div class="terminal-window">
+
+            <!-- Terminal Titlebar -->
+            <div class="terminal-titlebar">
+                <span class="terminal-dots">
+                    <span class="terminal-dot blue"></span>
+                    <span class="terminal-dot blue"></span>
+                    <span class="terminal-dot blue"></span>
+                </span>
+                <span class="terminal-title">~/naloolivi/portfolio.py</span>
             </div>
+
+            <!-- Terminal Code Area -->
+            <div class="terminal-code">
+                <div class="terminal-gutter">1<br>2<br>3</div>
+                <div class="terminal-lines">
+                    <div><span class="code-comment"># NaloOliv – portfólio</span></div>
+                    <div><span class="typewriter-text" data-text='print("HelloWorld!")' data-highlight="print">print("HelloWorld!")</span></div>
+                    <div>
+                        <span class="term-prompt">&gt;&gt;&gt; </span><span class="term-text">selecione o idioma / select language</span><span class="terminal-cursor">|</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal Language Options -->
+            <div class="terminal-options">
+                <a href="./pt/portuguese.html" class="lang-card">
+                    <span class="lang-index">01</span>
+                    <i class="fa-solid fa-globe lang-icon"></i>
+                    <span class="lang-info">
+                        <span class="lang-name">Português</span>
+                        <span class="lang-command">acessar_no_brasil("PT-BR")</span>
+                    </span>
+                </a>
+
+                <a href="./en/english.html" class="lang-card">
+                    <span class="lang-index">02</span>
+                    <i class="fa-solid fa-language lang-icon"></i>
+                    <span class="lang-info">
+                        <span class="lang-name">English</span>
+                        <span class="lang-command">international_version("EN")</span>
+                    </span>
+                </a>
+            </div>
+
         </div>
-
-        <div class="flotting-e">?</div>
-
-        <!--Formulário-->
-        <div class="contact-me">
-            
-        </div>
-
-        <div class="f-options"></div>
-    </div>
-
+    </main>
 
     <script src="./script.js"></script>
 </body>
