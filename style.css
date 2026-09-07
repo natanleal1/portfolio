@@ -1426,3 +1426,26 @@ body.light .terminal-code {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   10. SCROLL REVEAL ANIMATIONS (text & images fade/slide in on scroll)
+   ========================================================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Accessibility: skip the animation for reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

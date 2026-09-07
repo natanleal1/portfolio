@@ -454,4 +454,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initial taskbar update
   updateTaskbar();
+
+  // -------------------------------------------------------------------
+  // 5. Scroll Reveal Animations (text & images fade in while scrolling)
+  // -------------------------------------------------------------------
+  const revealTargets = document.querySelectorAll(
+    '.home-content, .home-img, .about-img, .about-content, .section-header-center, ' +
+    '.service-box, .project-card, .terminal-window, ' +
+    'footer.contact h1, footer.contact h3, footer.contact p, .contact-icons'
+  );
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (revealTargets.length && !prefersReducedMotion) {
+    const REVEAL_EDGE = 40; // px above the viewport bottom edge
+
+    const isInView = (el) => {
+      const rect = el.getBoundingClientRect();
+      return rect.top < window.innerHeight - REVEAL_EDGE && rect.bottom > 0;
+    };
+
+    const revealEl = (el) => {
+      if (el.dataset.revealed) return;
+      el.dataset.revealed = '1';
+
+      const delay = parseFloat(el.style.transitionDelay) || 0;
+      el.classList.add('visible');
+
+      // Remove helper classes after the reveal so the element's original
+      // CSS transitions (e.g. card hover effects) are fully restored
+      setTimeout(() => {
+        el.classList.remove('reveal', 'visible');
+        el.style.transitionDelay = '';
+      }, 900 + delay * 1000);
+    };
+
+    let revealObserver = null;
+    if ('IntersectionObserver' in window) {
+      revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            revealEl(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    }
+
+    // Fallback check (also covers environments where observer
+    // callbacks never fire because frames are not rendered)
+    let revealTickPending = false;
+    const revealCheck = () => {
+      revealTickPending = false;
+      revealTargets.forEach(el => {
+        if (!el.dataset.revealed && isInView(el)) {
+          revealEl(el);
+          if (revealObserver) revealObserver.unobserve(el);
+        }
+      });
+    };
+
+    const requestRevealCheck = () => {
+      if (!revealTickPending) {
+        revealTickPending = true;
+        requestAnimationFrame(revealCheck);
+      }
+    };
+
+    revealTargets.forEach(el => {
+      el.classList.add('reveal');
+
+      // Stagger siblings inside the same parent for a cascading effect
+      const parent = el.parentElement;
+      const groupIndex = parent
+        ? Array.from(parent.children).filter(c => c.classList.contains('reveal')).indexOf(el)
+        : 0;
+      el.style.transitionDelay = (Math.min(groupIndex, 4) * 0.1) + 's';
+
+      if (revealObserver) revealObserver.observe(el);
+    });
+
+    window.addEventListener('scroll', requestRevealCheck, { passive: true });
+    window.addEventListener('resize', requestRevealCheck);
+    requestRevealCheck();
+  }
 });

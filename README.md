@@ -1,13 +1,19 @@
-### Sobre o Projeto ✨
----
-Este portfólio digital foi construído com **HTML5**, **CSS3** e **JavaScript** com o objetivo de demonstrar minhas habilidades de desenvolvimento web. O projeto serve como um "cartão de visitas" interativo, apresentando alguns projetos, competências e informações de contato de uma forma visualmente atraente e funcional. **Obs: Projeto feito de modo Bilingue(inglês e Português)**
+# NaloOliv — Portfólio Digital
 
----
+Portfólio de desenvolvedor web, construído com **HTML5**, **CSS3** e **JavaScript**.
 
-### Habilidades em Destaque 💻
+Funciona como um cartão de visitas interativo, com projetos, competências e informações de contato apresentados de forma visual e funcional. O projeto é bilingue (português e inglês).
 
-O desenvolvimento deste portfólio permitiu a aplicação prática de diversas competências, incluindo:
+## Habilidades
 
-* **HTML5:** Estruturação semântica do conteúdo, garantindo acessibilidade e organização.
-* **CSS3:** Estilização e design responsivo, criando uma interface agradável e adaptável a diferentes dispositivos.
-* **JavaScript:** Implementação de funcionalidades interativas, como por exemplo a mudança da tonalidade do cenário dentro da aplicação para aprimorar a experiência do usuário.
+- **HTML5:** estrutura semântica do conteúdo, com foco em acessibilidade e organização.
+- **CSS3:** estilização e design responsivo, adaptado a diferentes dispositivos.
+- **JavaScript:** funcionalidades interativas, incluindo alternância do tema claro/escuro, efeitos de digitação e animações de revelação ao rolar a página.
+
+## Estrutura
+
+- `index.html` — seletor de idioma em formato de terminal interativo.
+- `pt/` — versão em português.
+- `en/` — versão em inglês.
+- `style.css` — estilos globais, temas claro/escuro e animações.
+- `script.js` — partículas de fundo, desktop interativo de tecnologias e animações de scroll.
