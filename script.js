@@ -332,7 +332,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (maxBtn) {
       maxBtn.addEventListener('click', () => {
-        win.classList.toggle('maximized');
+        if (!win.classList.contains('maximized')) {
+          // Remember dragged position before maximizing
+          win.dataset.prevLeft = win.style.left || '';
+          win.dataset.prevTop = win.style.top || '';
+          win.classList.add('maximized');
+          win.style.left = '';
+          win.style.top = '';
+          win.style.right = '';
+        } else {
+          win.classList.remove('maximized');
+          const pl = win.dataset.prevLeft || '';
+          const pt = win.dataset.prevTop || '';
+          if (pl) {
+            win.style.left = pl;
+            win.style.top = pt;
+            win.style.right = 'auto';
+          } else {
+            win.style.left = '';
+            win.style.top = '';
+            win.style.right = '';
+          }
+        }
       });
     }
 
@@ -349,6 +370,51 @@ document.addEventListener('DOMContentLoaded', () => {
       aeroWindows.forEach(w => w.classList.remove('active'));
       win.classList.add('active');
       updateTaskbar();
+    });
+  });
+
+  // Drag windows freely by their titlebar (Windows-style)
+  aeroWindows.forEach(win => {
+    const titlebar = win.querySelector('.win-titlebar');
+    if (!titlebar) return;
+
+    let dragging = false;
+    let startX = 0, startY = 0, originLeft = 0, originTop = 0;
+
+    titlebar.addEventListener('mousedown', (e) => {
+      // Ignore clicks on window control buttons
+      if (e.target.closest('.win-control')) return;
+      if (win.classList.contains('maximized') || win.classList.contains('closed')) return;
+
+      const desktop = win.closest('.aero-desktop') || win.parentElement;
+      const desktopRect = desktop.getBoundingClientRect();
+      const winRect = win.getBoundingClientRect();
+
+      dragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      originLeft = winRect.left - desktopRect.left;
+      originTop = winRect.top - desktopRect.top;
+
+      // Convert from CSS right-positioning to explicit left/top
+      win.style.left = originLeft + 'px';
+      win.style.top = originTop + 'px';
+      win.style.right = 'auto';
+      win.classList.add('dragging');
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!dragging) return;
+      win.style.left = (originLeft + (e.clientX - startX)) + 'px';
+      win.style.top = (originTop + (e.clientY - startY)) + 'px';
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (dragging) {
+        dragging = false;
+        win.classList.remove('dragging');
+      }
     });
   });
 

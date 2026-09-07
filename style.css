@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
 
 /* ==========================================================================
    1. RESET & BASE VARIABLES
@@ -41,9 +41,10 @@
 }
 
 /* Light Theme Variables */
+/* Light Theme Variables - Cool Gray / Slate (Cinza Frio / Azulado) */
 body.light {
-    --bg-color: #f1f5f9;
-    --card-bg: rgba(255, 255, 255, 0.85);
+    --bg-color: #F3F4F6;
+    --card-bg: rgba(241, 245, 249, 0.85);
     --card-border: rgba(0, 102, 255, 0.15);
     --card-hover-border: rgba(0, 102, 255, 0.5);
     
@@ -56,8 +57,8 @@ body.light {
     --accent-gradient: linear-gradient(135deg, #0066ff 0%, #0284c7 100%);
     --accent-glow: rgba(0, 102, 255, 0.15);
 
-    --aero-glass-bg: rgba(255, 255, 255, 0.82);
-    --aero-titlebar: linear-gradient(180deg, rgba(240,244,248,0.9) 0%, rgba(200,210,225,0.9) 100%);
+    --aero-glass-bg: rgba(239, 239, 244, 0.85);
+    --aero-titlebar: linear-gradient(180deg, rgba(243,244,246,0.9) 0%, rgba(228,231,236,0.9) 100%);
     --aero-shadow: 0 15px 35px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
@@ -124,7 +125,7 @@ header {
 }
 
 body.light header {
-    background: rgba(241, 245, 249, 0.85);
+    background: rgba(243, 244, 246, 0.9);
 }
 
 .logo {
@@ -562,9 +563,19 @@ body.light .aero-icon-label {
 .icon-docker { color: #2496ed; }
 .icon-js { color: #f7df1e; }
 .icon-sql { color: #00758f; }
-.icon-ts { color: #3178c6; }
+.icon-jupyter { color: #f37626; }
 .icon-git { color: #f05032; }
 .icon-ai { color: #00f0ff; }
+
+/* Jupyter Notebook logo (inline SVG, scales with em like Font Awesome) */
+.jupyter-logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.win-title-left svg {
+    font-size: 1rem;
+}
 
 /* Aero Simulated Windows */
 .aero-window {
@@ -587,7 +598,7 @@ body.light .aero-icon-label {
 }
 
 body.light .aero-window {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(243, 244, 246, 0.96);
     border-color: rgba(0, 102, 255, 0.3);
 }
 
@@ -620,6 +631,16 @@ body.light .aero-window {
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
+    user-select: none;
+    cursor: grab;
+}
+
+/* While dragging a window */
+.aero-window.dragging .win-titlebar {
+    cursor: grabbing;
+}
+
+.aero-window.dragging {
     user-select: none;
 }
 
@@ -746,6 +767,21 @@ body.light .aero-window {
 .code-str { color: #34d399; }
 .code-comment { color: #64748b; font-style: italic; }
 
+/* Neutralize the global gradient `span` text rule where plain colored text
+   is intended (fixes invisible tech chips/badges and syntax colors) */
+.project-tag,
+.win-tech-badge {
+    -webkit-text-fill-color: initial;
+    -webkit-background-clip: initial;
+}
+
+.win-code-box span,
+.win-title-left .win-title-text,
+.taskbar-tab span {
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
 /* Aero Taskbar */
 .aero-taskbar {
     height: 44px;
@@ -759,7 +795,7 @@ body.light .aero-window {
 }
 
 body.light .aero-taskbar {
-    background: linear-gradient(180deg, rgba(220, 230, 242, 0.95) 0%, rgba(190, 205, 225, 0.98) 100%);
+    background: linear-gradient(180deg, rgba(228, 231, 236, 0.95) 0%, rgba(210, 214, 222, 0.98) 100%);
     border-top-color: rgba(0, 102, 255, 0.2);
 }
 
@@ -842,7 +878,7 @@ body.light .aero-taskbar {
 }
 
 body.light .aero-start-menu {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(243, 244, 246, 0.96);
 }
 
 .aero-start-menu.active {
@@ -1141,8 +1177,6 @@ footer p {
 }
 
 .terminal-dot.blue { background: #0072ff; }
-.terminal-dot.purple { background: #a855f7; }
-.terminal-dot.green { background: #34d399; }
 
 .terminal-title {
     font-size: 0.85rem;
@@ -1162,6 +1196,14 @@ footer p {
     overflow-x: auto;
     background: #05080e;
     border-bottom: 1px solid var(--card-border);
+    /* Code font: IBM Plex Mono, fallback JetBrains Mono (code lines only) */
+    font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Override the global `*` font rule so every element inside the code
+   block (gutter, lines, highlighted spans) keeps the code font */
+.terminal-code * {
+    font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', monospace;
 }
 
 body.light .terminal-code {
