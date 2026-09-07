@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NaloNet - Natan Leal</title>
+    <title>Naloliveira - Natan Leal</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="./public/favicon.png" type="image/png">
@@ -14,7 +14,7 @@
 
     <header>        
         <a href="#" class="logo">
-            Nalo<span>NeT</span>
+            Nalo<span>Oliv</span>
         </a>
 
         <div class="header-actions">
@@ -25,37 +25,51 @@
     <br><br>
 
     <main style="min-height: 85vh; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; padding: 2rem;">
-        <div style="background: var(--card-bg); backdrop-filter: blur(20px); border: 1px solid var(--card-border); border-radius: 24px; padding: 3rem 2.5rem; max-width: 650px; width: 100%; text-align: center; box-shadow: var(--aero-shadow);">
-            
-            <!-- <div class="terminal-badge" style="margin: 0 auto 1.5rem;">
-                <span class="pulse-dot"></span>
-                <span>system.init()</span>
-            </div> -->
+        <div class="terminal-window">
 
+            <!-- Terminal Titlebar -->
+            <div class="terminal-titlebar">
+                <span class="terminal-dots">
+                    <span class="terminal-dot blue"></span>
+                    <span class="terminal-dot blue"></span>
+                    <span class="terminal-dot blue"></span>
+                </span>
+                <span class="terminal-title">~/naloolivi/portfolio.py</span>
+            </div>
 
-            <h1 style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.75rem;">
-                <span class="typewriter-text" data-text='print("Hello World!")'>print("Hello World!")</span>
-            </h1>
+            <!-- Terminal Code Area -->
+            <div class="terminal-code">
+                <div class="terminal-gutter">1<br>2<br>3</div>
+                <div class="terminal-lines">
+                    <div><span class="code-comment"># NaloOliv – portfólio</span></div>
+                    <div><span class="typewriter-text" data-text='print("HelloWorld!")' data-highlight="print">print("HelloWorld!")</span></div>
+                    <div>
+                        <span class="term-prompt">&gt;&gt;&gt; </span><span class="term-text">selecione o idioma / select language</span><span class="terminal-cursor">|</span>
+                    </div>
+                </div>
+            </div>
 
-            <p style="color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 2.5rem;">
-                Selecione seu idioma para explorar o portfólio | Select your language to explore the portfolio
-            </p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;">
-                <a href="./pt/portuguese.html" class="lang-card" style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--card-border); border-radius: 16px; color: var(--text-primary); transition: all 0.3s ease;">
-                    <i class="fa-solid fa-globe" style="font-size: 2rem; color: var(--accent-cyan);"></i>
-                    <span style="font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; -webkit-text-fill-color: initial; background: none; color: var(--text-primary);">Português</span>
-                    <span style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">Acessar no Brasil (PT-BR)</span>
+            <!-- Terminal Language Options -->
+            <div class="terminal-options">
+                <a href="./pt/portuguese.html" class="lang-card">
+                    <span class="lang-index">01</span>
+                    <i class="fa-solid fa-globe lang-icon"></i>
+                    <span class="lang-info">
+                        <span class="lang-name">Português</span>
+                        <span class="lang-command">acessar_no_brasil("PT-BR")</span>
+                    </span>
                 </a>
 
-                <a href="./en/english.html" class="lang-card" style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--card-border); border-radius: 16px; color: var(--text-primary); transition: all 0.3s ease;">
-                    <i class="fa-solid fa-language" style="font-size: 2rem; color: var(--accent-cyan);"></i>
-                    <span style="font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; -webkit-text-fill-color: initial; background: none; color: var(--text-primary);">English</span>
-                    <span style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">International Version (EN)</span>
+                <a href="./en/english.html" class="lang-card">
+                    <span class="lang-index">02</span>
+                    <i class="fa-solid fa-language lang-icon"></i>
+                    <span class="lang-info">
+                        <span class="lang-name">English</span>
+                        <span class="lang-command">international_version("EN")</span>
+                    </span>
                 </a>
             </div>
 
-    
         </div>
     </main>
 
